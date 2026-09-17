@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Jehad ❤️</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/finale.css">
+</head>
+
+<body>
+
+    <!-- Finale Replay Transition -->
+    <div class="finale-transition">
+        <span class="finale-transition__ring"></span>
+        <span class="finale-transition__flash"></span>
+    </div>
+
+    <main>
+
+        <section class="finale-page">
+
+            <!-- Ambient Background -->
+            <div class="finale-stars"></div>
+
+            <div class="finale-glow finale-glow--one"></div>
+            <div class="finale-glow finale-glow--two"></div>
+
+            <!-- Floating Balloons -->
+            <div class="balloons">
+
+                <span class="balloon balloon--one"></span>
+                <span class="balloon balloon--two"></span>
+                <span class="balloon balloon--three"></span>
+                <span class="balloon balloon--four"></span>
+                <span class="balloon balloon--five"></span>
+
+            </div>
+
+            <!-- Confetti -->
+            <div class="confetti">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="finale-content">
+
+                <p class="finale__label">
+                    And finally...
+                </p>
+
+                <h1 class="finale__title">
+                    HAPPY<br>
+                    <span>BIRTHDAY</span>
+                </h1>
+
+                <h2 class="finale__name">
+                    JEHAD
+                </h2>
+
+                <!-- Cake -->
+                <div class="finale-cake">
+
+                    <div class="cake__flames">
+
+                        <span class="cake__flame cake__flame--one"></span>
+                        <span class="cake__flame cake__flame--two"></span>
+                        <span class="cake__flame cake__flame--three"></span>
+
+                    </div>
+
+                    <div class="cake__candles">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="cake__top"></div>
+
+                    <div class="cake__body">
+
+                        <span class="cake__cream cake__cream--one"></span>
+                        <span class="cake__cream cake__cream--two"></span>
+                        <span class="cake__cream cake__cream--three"></span>
+
+                    </div>
+
+                    <div class="cake__plate"></div>
+
+                </div>
+
+                <!-- Final Message -->
+                <div class="finale-message">
+
+                    <p>
+                        May this year bring you
+                        more happiness,
+                        more success,
+                        and more beautiful moments
+                        than you can imagine.
+                    </p>
+
+                    <p class="finale-message__highlight">
+                        Keep smiling. Keep dreaming.
+                        And keep being you. ❤️
+                    </p>
+
+                </div>
+
+                <!-- Replay -->
+                <button class="finale__button">
+                    <span>↻</span>
+                    Experience It Again
+                </button>
+
+                <p class="finale__footer">
+                    Made with ❤️ just for Jehad
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+
+        const finalePage =
+            document.querySelector(".finale-page");
+
+        const replayButton =
+            document.querySelector(".finale__button");
+
+        const transition =
+            document.querySelector(".finale-transition");
+
+
+        /* PAGE ENTRANCE */
+
+        window.addEventListener("load", () => {
+
+            finalePage.classList.add("page-loaded");
+
+        });
+
+
+        /* REPLAY */
+
+        replayButton.addEventListener("click", () => {
+
+            finalePage.classList.add("page-exit");
+
+            transition.classList.add("active");
+
+            setTimeout(() => {
+
+                window.location.href = "../index.html";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+    <script src="../js/music.js"></script>
+
+
+</body>
+</html>

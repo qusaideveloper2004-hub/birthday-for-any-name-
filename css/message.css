@@ -1,0 +1,786 @@
+/* =================================
+   MESSAGE PAGE
+================================= */
+
+.message-page {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        40px 24px;
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(139, 92, 246, 0.08),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(236, 72, 153, 0.06),
+            transparent 30%
+        );
+
+}
+
+
+/* =================================
+   PAGE DECORATION
+================================= */
+
+.message-page::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(139, 92, 246, 0.07),
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =================================
+   INITIAL STATE
+================================= */
+
+.message-page__label,
+.message-page__title,
+.message-page__line,
+.message-page__text,
+.message-page__final,
+.message-page__button {
+
+    opacity:
+        0;
+
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.message-page__label {
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        14px;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.message-page.page-loaded
+.message-page__label {
+
+    animation:
+
+        messageLabel
+        0.8s
+        ease
+        0.3s
+        forwards;
+
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.message-page__title {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+
+        clamp(
+            52px,
+            9vw,
+            100px
+        );
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -2px;
+
+    transform:
+        translateY(25px)
+        scale(0.96);
+
+}
+
+
+.message-page.page-loaded
+.message-page__title {
+
+    animation:
+
+        messageTitle
+        1s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        0.7s
+        forwards;
+
+}
+
+
+/* =================================
+   DECORATIVE LINE
+================================= */
+
+.message-page__line {
+
+    width:
+        0;
+
+    height:
+        1px;
+
+    margin:
+        25px 0 40px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--purple),
+            var(--pink),
+            transparent
+        );
+
+}
+
+
+.message-page.page-loaded
+.message-page__line {
+
+    animation:
+
+        messageLine
+        1s
+        ease
+        1.3s
+        forwards;
+
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.message-page__content {
+
+    width:
+        100%;
+
+    max-width:
+        680px;
+
+}
+
+
+/* =================================
+   TEXT
+================================= */
+
+.message-page__text {
+
+    margin-bottom:
+        22px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        18px;
+
+    line-height:
+        1.9;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.message-page.page-loaded
+.message-page__text:nth-child(1) {
+
+    animation:
+
+        messageText
+        0.9s
+        ease
+        1.6s
+        forwards;
+
+}
+
+
+.message-page.page-loaded
+.message-page__text:nth-child(2) {
+
+    animation:
+
+        messageText
+        0.9s
+        ease
+        2.2s
+        forwards;
+
+}
+
+
+.message-page.page-loaded
+.message-page__text:nth-child(3) {
+
+    animation:
+
+        messageText
+        0.9s
+        ease
+        2.8s
+        forwards;
+
+}
+
+
+.message-page.page-loaded
+.message-page__text:nth-child(4) {
+
+    animation:
+
+        messageText
+        0.9s
+        ease
+        3.4s
+        forwards;
+
+}
+
+
+/* =================================
+   FINAL MESSAGE
+================================= */
+
+.message-page__final {
+
+    margin-top:
+        35px;
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        21px;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.7;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.message-page.page-loaded
+.message-page__final {
+
+    animation:
+
+        finalMessage
+        1s
+        ease
+        4s
+        forwards;
+
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.message-page__button {
+
+    margin-top:
+        45px;
+
+    padding:
+        14px 30px;
+
+    border:
+        none;
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(139, 92, 246, 0.3);
+
+    transform:
+        translateY(20px);
+
+    transition:
+
+        transform 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.message-page.page-loaded
+.message-page__button {
+
+    animation:
+
+        messageButton
+        0.8s
+        ease
+        4.8s
+        forwards;
+
+}
+
+
+.message-page__button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(236, 72, 153, 0.5);
+
+}
+
+
+/* =================================
+   PAGE EXIT
+================================= */
+
+.message-page.page-exit {
+
+    animation:
+
+        messageExit
+        0.9s
+        ease
+        forwards;
+
+}
+
+
+/* =================================
+   MESSAGE TRANSITION
+   PAGE 4 → PAGE 5
+================================= */
+
+.message-transition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        9999;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.12),
+            rgba(139, 92, 246, 0.25),
+            #050510
+        );
+
+    transform:
+        scale(0.2);
+
+    border-radius:
+        50%;
+
+    filter:
+        blur(15px);
+
+    transition:
+
+        transform 1s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+
+        opacity 0.6s ease,
+
+        filter 1s ease;
+
+}
+
+
+.message-transition.active {
+
+    opacity:
+        1;
+
+    transform:
+        scale(4);
+
+    filter:
+        blur(0);
+
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes messageLabel {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes messageTitle {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes messageLine {
+
+    from {
+
+        width:
+            0;
+
+        opacity:
+            0;
+
+    }
+
+    to {
+
+        width:
+            180px;
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+@keyframes messageText {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes finalMessage {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px)
+            scale(0.98);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes messageButton {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes messageExit {
+
+    from {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+    to {
+
+        opacity:
+            0;
+
+        transform:
+            scale(1.04);
+
+        filter:
+            blur(8px);
+
+    }
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+    .message-page {
+
+        padding:
+            35px 20px;
+
+    }
+
+
+    .message-page__label {
+
+        font-size:
+            12px;
+
+        letter-spacing:
+            3px;
+
+    }
+
+
+    .message-page__title {
+
+        font-size:
+            52px;
+
+    }
+
+
+    .message-page__text {
+
+        font-size:
+            16px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    .message-page__final {
+
+        font-size:
+            19px;
+
+    }
+
+}

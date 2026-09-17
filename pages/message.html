@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For Jehad 💌</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/message.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Page Transition -->
+
+    <div class="message-transition"></div>
+
+
+    <main>
+
+        <section class="message-page">
+
+
+            <!-- Small Label -->
+
+            <p class="message-page__label">
+                A little message
+            </p>
+
+
+            <!-- Title -->
+
+            <h1 class="message-page__title">
+                For Jehad...
+            </h1>
+
+
+            <!-- Decorative Line -->
+
+            <div class="message-page__line"></div>
+
+
+            <!-- Message -->
+
+            <div class="message-page__content">
+
+                <p class="message-page__text">
+                    Some people make ordinary days
+                    feel a little more special.
+                </p>
+
+
+                <p class="message-page__text">
+                    And today is a reminder of how
+                    beautiful it is to have someone
+                    like you around.
+                </p>
+
+
+                <p class="message-page__text">
+                    I hope this new year of your life
+                    brings you happiness, peace,
+                    success, and countless moments
+                    worth remembering.
+                </p>
+
+
+                <p class="message-page__text">
+                    Keep being the person you are,
+                    keep smiling, and keep chasing
+                    everything you dream about.
+                </p>
+
+
+                <p class="message-page__final">
+                    You deserve beautiful things,
+                    Jehad. ❤️
+                </p>
+
+            </div>
+
+
+            <!-- Continue -->
+
+            <button class="message-page__button">
+                Continue →
+            </button>
+
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const messagePage =
+            document.querySelector(".message-page");
+
+
+        const transition =
+            document.querySelector(".message-transition");
+
+
+        const button =
+            document.querySelector(".message-page__button");
+
+
+        /*
+            Page Entrance
+        */
+
+        window.addEventListener("load", () => {
+
+            messagePage.classList.add("page-loaded");
+
+        });
+
+
+        /*
+            Page Exit
+        */
+
+        button.addEventListener("click", () => {
+
+            messagePage.classList.add("page-exit");
+
+            transition.classList.add("active");
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "wish.html";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+    <script src="../js/music.js"></script>
+
+
+</body>
+
+</html>

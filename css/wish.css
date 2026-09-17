@@ -1,0 +1,1264 @@
+/* =================================
+   WISH PAGE
+================================= */
+
+.wish-page {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        40px 24px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(245, 199, 106, 0.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 30% 80%,
+            rgba(139, 92, 246, 0.08),
+            transparent 30%
+        );
+
+}
+
+
+/* =================================
+   AMBIENT LIGHT
+================================= */
+
+.wish-page::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        350px;
+
+    height:
+        350px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(245, 199, 106, 0.12),
+            transparent 70%
+        );
+
+    filter:
+        blur(35px);
+
+    opacity:
+        0.6;
+
+    transition:
+        opacity 0.8s ease;
+
+    pointer-events:
+        none;
+
+}
+
+
+.wish-page.wish-made::before {
+
+    opacity:
+        0.15;
+
+}
+
+
+/* =================================
+   INITIAL STATE
+================================= */
+
+.wish-page__label,
+.wish-page__title,
+.wish-page__subtitle,
+.candle,
+.wish-page__hint,
+.wish-success,
+.wish-cards,
+.wish-page__button {
+
+    opacity:
+        0;
+
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.wish-page__label {
+
+    margin-bottom:
+        15px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.wish-page.page-loaded
+.wish-page__label {
+
+    animation:
+
+        wishLabel
+        0.7s
+        ease
+        0.3s
+        forwards;
+
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.wish-page__title {
+
+    font-size:
+
+        clamp(
+            50px,
+            9vw,
+            95px
+        );
+
+    line-height:
+        1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--gold),
+            var(--pink),
+            var(--purple)
+        );
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    transform:
+        translateY(25px)
+        scale(0.96);
+
+}
+
+
+.wish-page.page-loaded
+.wish-page__title {
+
+    animation:
+
+        wishTitle
+        0.9s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        0.7s
+        forwards;
+
+}
+
+
+/* =================================
+   SUBTITLE
+================================= */
+
+.wish-page__subtitle {
+
+    max-width:
+        500px;
+
+    margin:
+        22px 0 30px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.7;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.wish-page.page-loaded
+.wish-page__subtitle {
+
+    animation:
+
+        wishSubtitle
+        0.8s
+        ease
+        1.2s
+        forwards;
+
+}
+
+
+/* =================================
+   CANDLE
+================================= */
+
+.candle {
+
+    position:
+        relative;
+
+    width:
+        130px;
+
+    height:
+        190px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    cursor:
+        pointer;
+
+    margin:
+        10px 0 15px;
+
+    transform:
+        translateY(30px)
+        scale(0.8);
+
+}
+
+
+.wish-page.page-loaded
+.candle {
+
+    animation:
+
+        candleAppear
+        1s
+        cubic-bezier(
+            0.34,
+            1.56,
+            0.64,
+            1
+        )
+        1.7s
+        forwards;
+
+}
+
+
+/* =================================
+   CANDLE BODY
+================================= */
+
+.candle__body {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        10px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        72px;
+
+    height:
+        115px;
+
+    border-radius:
+        8px 8px 12px 12px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #d8b56a,
+            #f5d98c,
+            #c49b4c
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(245, 199, 106, 0.18);
+
+}
+
+
+/* =================================
+   CANDLE SHINE
+================================= */
+
+.candle__shine {
+
+    position:
+        absolute;
+
+    left:
+        13px;
+
+    top:
+        10px;
+
+    width:
+        8px;
+
+    height:
+        85px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    filter:
+        blur(2px);
+
+}
+
+
+/* =================================
+   CANDLE BASE
+================================= */
+
+.candle__base {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        0;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        100px;
+
+    height:
+        16px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #a27c35,
+            #e1bb67,
+            #9c7632
+        );
+
+    box-shadow:
+
+        0 6px 15px
+        rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =================================
+   WICK
+================================= */
+
+.candle__wick {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        40px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        4px;
+
+    height:
+        16px;
+
+    border-radius:
+        4px;
+
+    background:
+        #33251a;
+
+    z-index:
+        2;
+
+}
+
+
+/* =================================
+   FLAME
+================================= */
+
+.candle__flame {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        3px;
+
+    width:
+        30px;
+
+    height:
+        50px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50% / 65% 65% 35% 35%;
+
+    background:
+
+        linear-gradient(
+            to top,
+            #ff8a00,
+            #ffd56a,
+            #fff4c4
+        );
+
+    filter:
+
+        drop-shadow(
+            0 0 12px
+            rgba(255, 174, 0, 0.9)
+        );
+
+    transform-origin:
+        bottom center;
+
+    animation:
+
+        flameFlicker
+        0.8s
+        ease-in-out
+        infinite
+        alternate;
+
+    z-index:
+        3;
+
+}
+
+
+/* =================================
+   CANDLE HOVER
+================================= */
+
+.candle:hover .candle__flame {
+
+    filter:
+
+        drop-shadow(
+            0 0 20px
+            rgba(255, 174, 0, 1)
+        );
+
+}
+
+
+/* =================================
+   WISH HINT
+================================= */
+
+.wish-page__hint {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        1px;
+
+    transform:
+        translateY(15px);
+
+}
+
+
+.wish-page.page-loaded
+.wish-page__hint {
+
+    animation:
+
+        hintAppear
+        0.7s
+        ease
+        2.5s
+        forwards;
+
+}
+
+
+.wish-page.wish-made
+.wish-page__hint {
+
+    color:
+        var(--gold);
+
+}
+
+
+/* =================================
+   SUCCESS
+================================= */
+
+.wish-success {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-top:
+        25px;
+
+    padding:
+        14px 20px;
+
+    border-radius:
+        14px;
+
+    border:
+
+        1px solid
+        rgba(134, 239, 172, 0.2);
+
+    background:
+        rgba(134, 239, 172, 0.05);
+
+    text-align:
+        left;
+
+    transform:
+        translateY(15px)
+        scale(0.96);
+
+}
+
+
+.wish-success.show {
+
+    animation:
+
+        successAppear
+        0.7s
+        ease
+        forwards;
+
+}
+
+
+.wish-success__icon {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(134, 239, 172, 0.12);
+
+    color:
+        #86EFAC;
+
+    font-weight:
+        bold;
+
+}
+
+
+.wish-success__title {
+
+    color:
+        #86EFAC;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        4px;
+
+}
+
+
+.wish-success__text {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =================================
+   WISH CARDS
+================================= */
+
+.wish-cards {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        12px;
+
+    width:
+        100%;
+
+    max-width:
+        650px;
+
+    margin-top:
+        25px;
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.wish-cards.show {
+
+    animation:
+
+        cardsAppear
+        0.8s
+        ease
+        0.2s
+        forwards;
+
+}
+
+
+.wish-card {
+
+    padding:
+        15px 10px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition:
+
+        transform 0.3s ease,
+
+        background 0.3s ease;
+
+}
+
+
+.wish-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+}
+
+
+.wish-card span {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        20px;
+
+}
+
+
+.wish-card p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =================================
+   CONTINUE BUTTON
+================================= */
+
+.wish-page__button {
+
+    margin-top:
+        30px;
+
+    padding:
+        14px 30px;
+
+    border:
+        none;
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(139, 92, 246, 0.3);
+
+    transform:
+        translateY(20px);
+
+}
+
+
+.wish-page__button.show {
+
+    animation:
+
+        buttonAppear
+        0.8s
+        ease
+        forwards;
+
+}
+
+
+.wish-page__button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(236, 72, 153, 0.5);
+
+}
+
+
+/* =================================
+   PAGE EXIT
+================================= */
+
+.wish-page.page-exit {
+
+    animation:
+
+        wishExit
+        0.9s
+        ease
+        forwards;
+
+}
+
+
+/* =================================
+   TRANSITION
+   PAGE 5 → PAGE 6
+================================= */
+
+.wish-transition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        9999;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    background:
+        #050510;
+
+    clip-path:
+        circle(
+            0% at 50% 50%
+        );
+
+    transition:
+
+        clip-path 1s
+        cubic-bezier(
+            0.77,
+            0,
+            0.18,
+            1
+        ),
+
+        opacity 0.4s ease;
+
+}
+
+
+.wish-transition.active {
+
+    opacity:
+        1;
+
+    clip-path:
+        circle(
+            100% at 50% 50%
+        );
+
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes wishLabel {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes wishTitle {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes wishSubtitle {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes candleAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(30px)
+            scale(0.8);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes flameFlicker {
+
+    0% {
+
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(-2deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(-50%)
+            scale(1.08)
+            rotate(3deg);
+
+    }
+
+}
+
+
+@keyframes hintAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes successAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes cardsAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes buttonAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes wishExit {
+
+    from {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+    }
+
+    to {
+
+        opacity:
+            0;
+
+        transform:
+            scale(1.03);
+
+        filter:
+            blur(6px);
+
+    }
+
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 650px) {
+
+    .wish-page {
+
+        padding:
+            30px 18px;
+
+    }
+
+
+    .wish-page__title {
+
+        font-size:
+            52px;
+
+    }
+
+
+    .wish-page__subtitle {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .wish-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        max-width:
+            400px;
+
+    }
+
+
+    .wish-success {
+
+        max-width:
+            320px;
+
+    }
+
+}

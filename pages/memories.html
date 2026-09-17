@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Little Memories ❤️</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/memories.css">
+</head>
+
+<body>
+
+    <!-- Page Transition -->
+    <div class="memories-transition"></div>
+
+    <main>
+
+        <section class="memories-page">
+
+            <!-- Header -->
+            <div class="memories-page__header">
+
+                <p class="memories-page__label">
+                    A few moments...
+                </p>
+
+                <h1 class="memories-page__title">
+                    Little Memories
+                </h1>
+
+                <p class="memories-page__subtitle">
+                    Every beautiful moment deserves a little space to stay.
+                </p>
+
+            </div>
+
+
+            <!-- Memories Gallery -->
+            <div class="memories-gallery">
+
+                <!-- Memory 1 -->
+                <article class="memory-card memory-card--one">
+
+                    <div class="memory-card__image">
+
+                        <img
+                            src="../assets/memories/memory-1.jpg"
+                            alt="A beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="memory-card__content">
+
+                        <p class="memory-card__title">
+                            A beautiful day
+                        </p>
+
+                        <p class="memory-card__date">
+                            A moment worth remembering
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Memory 2 -->
+                <article class="memory-card memory-card--two">
+
+                    <div class="memory-card__image">
+
+                        <img
+                            src="../assets/memories/memory-2.jpg"
+                            alt="A beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="memory-card__content">
+
+                        <p class="memory-card__title">
+                            Good times
+                        </p>
+
+                        <p class="memory-card__date">
+                            Happiness in one frame
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Memory 3 -->
+                <article class="memory-card memory-card--three">
+
+                    <div class="memory-card__image">
+
+                        <img
+                            src="../assets/memories/memory-3.jpg"
+                            alt="A beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="memory-card__content">
+
+                        <p class="memory-card__title">
+                            One of those moments
+                        </p>
+
+                        <p class="memory-card__date">
+                            Simple. Beautiful. Yours.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Memory 4 -->
+                <article class="memory-card memory-card--four">
+
+                    <div class="memory-card__image">
+
+                        <img
+                            src="../assets/memories/memory-4.jpg"
+                            alt="A beautiful memory"
+                        >
+
+                    </div>
+
+                    <div class="memory-card__content">
+
+                        <p class="memory-card__title">
+                            Keep smiling
+                        </p>
+
+                        <p class="memory-card__date">
+                            More moments are coming...
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Continue -->
+            <button
+                class="memories-page__button"
+                type="button"
+            >
+                One Last Thing →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const memoriesPage =
+            document.querySelector(".memories-page");
+
+        const transition =
+            document.querySelector(".memories-transition");
+
+        const button =
+            document.querySelector(".memories-page__button");
+
+
+        /* PAGE ENTRANCE */
+
+        window.addEventListener("load", () => {
+
+            memoriesPage.classList.add("page-loaded");
+
+        });
+
+
+        /* PAGE EXIT */
+
+        button.addEventListener("click", () => {
+
+            memoriesPage.classList.add("page-exit");
+
+            transition.classList.add("active");
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "finale.html";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+    <script src="../js/music.js"></script>
+
+
+</body>
+</html>

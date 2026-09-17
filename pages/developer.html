@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Developer Mode 💻</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+
+
+<body>
+
+    <!-- Page Transition -->
+
+    <div class="page-transition page-transition--terminal"></div>
+
+
+    <main>
+
+        <section class="developer">
+
+            <div class="terminal">
+
+
+                <!-- Terminal Header -->
+
+                <div class="developer__header">
+
+                    <div class="developer__controls">
+
+                        <span
+                            class="developer__dot developer__dot--red">
+                        </span>
+
+                        <span
+                            class="developer__dot developer__dot--yellow">
+                        </span>
+
+                        <span
+                            class="developer__dot developer__dot--green">
+                        </span>
+
+                    </div>
+
+
+                    <span class="developer__title">
+                        birthday.exe
+                    </span>
+
+                </div>
+
+
+                <!-- Code -->
+
+                <div class="terminal__code">
+
+                    <p>
+
+                        <span class="code-keyword">
+                            const
+                        </span>
+
+                        birthday =
+
+                        <span class="code-symbol">
+                            {
+                        </span>
+
+                    </p>
+
+
+                    <p class="code-indent">
+
+                        name:
+
+                        <span class="code-string">
+                            "Jehad"
+                        </span>,
+
+                    </p>
+
+
+                    <p class="code-indent">
+
+                        happiness:
+
+                        <span class="code-number">
+                            Infinity
+                        </span>,
+
+                    </p>
+
+
+                    <p class="code-indent">
+
+                        smiles:
+
+                        <span class="code-string">
+                            "Unlimited"
+                        </span>,
+
+                    </p>
+
+
+                    <p class="code-indent">
+
+                        wishes:
+
+                        <span class="code-string">
+                            "Loading..."
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="code-symbol">
+                            };
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- Terminal Output -->
+
+                <div class="terminal__output">
+
+                    <p>
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        Initializing birthday...
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        Loading happiness...
+
+                        <span class="success">
+                            OK
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        Loading memories...
+
+                        <span class="success">
+                            OK
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        Loading beautiful moments...
+
+                        <span class="success">
+                            OK
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="terminal-prompt">
+                            &gt;
+                        </span>
+
+                        System ready.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Special Message -->
+
+                <div class="developer__message">
+
+                    <span class="developer__message-icon">
+                        ♥
+                    </span>
+
+
+                    <p>
+
+                        Jehad deserves
+
+                        <strong>
+                            the best birthday ever.
+                        </strong>
+
+                    </p>
+
+                </div>
+
+
+                <!-- Continue -->
+
+                <button class="developer__button">
+
+                    Continue →
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const transition =
+            document.querySelector(".page-transition");
+
+
+        const developer =
+            document.querySelector(".developer");
+
+
+        const developerButton =
+            document.querySelector(".developer__button");
+
+
+        /*
+            Page Entrance
+        */
+
+        window.addEventListener("load", () => {
+
+            developer.classList.add("page-loaded");
+
+        });
+
+
+        /*
+            Page Exit
+        */
+
+        developerButton.addEventListener("click", () => {
+
+            developer.classList.add("page-exit");
+
+            transition.classList.add("active");
+
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "message.html";
+
+            }, 900);
+
+        });
+
+    </script>
+
+    <script src="../js/music.js"></script>
+
+
+</body>
+
+</html>

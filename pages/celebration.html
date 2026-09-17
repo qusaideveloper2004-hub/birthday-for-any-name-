@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>It's Your Day 🎂</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+</head>
+
+
+
+<body>
+    
+    <!-- Page Transition -->
+    
+    <div class="page-transition page-transition--zoom"></div>
+
+
+    <main>
+
+        <section class="celebration">
+
+            <p class="celebration__small">
+                Today isn't just another day...
+            </p>
+
+
+            <h1 class="celebration__title">
+                IT'S YOUR DAY
+            </h1>
+
+
+            <div class="celebration__cake">
+                🎂
+            </div>
+
+
+            <p class="celebration__name">
+                JEHAD
+            </p>
+
+
+            <button class="celebration__button">
+                💌 Continue
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const transition =
+            document.querySelector(".page-transition");
+
+
+        const celebration =
+            document.querySelector(".celebration");
+
+
+        /*
+            Page Entrance
+        */
+
+        window.addEventListener("load", () => {
+
+            celebration.classList.add("page-loaded");
+
+        });
+
+
+        /*
+            Page Exit
+        */
+
+        document
+            .querySelector(".celebration__button")
+            .addEventListener("click", () => {
+
+                celebration.classList.add("page-exit");
+
+                transition.classList.add("active");
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "developer.html";
+
+                }, 900);
+
+            });
+            
+            </script>
+
+    <script src="../js/music.js"></script>
+
+</body>
+
+</html>

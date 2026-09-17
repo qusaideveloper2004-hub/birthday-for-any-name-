@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Make a Wish ❤️</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/wish.css">
+</head>
+
+<body>
+
+    <!-- Page Transition -->
+    <div class="wish-transition"></div>
+
+    <main>
+
+        <section class="wish-page">
+
+            <p class="wish-page__label">
+                One last thing...
+            </p>
+
+            <h1 class="wish-page__title">
+                Make a Wish
+            </h1>
+
+            <p class="wish-page__subtitle">
+                Close your eyes, make a wish, and let the moment be yours.
+            </p>
+
+
+            <!-- Candle -->
+            <button
+                class="candle"
+                type="button"
+                aria-label="Blow out the candle"
+            >
+
+                <span class="candle__flame"></span>
+
+                <span class="candle__wick"></span>
+
+                <span class="candle__body">
+                    <span class="candle__shine"></span>
+                </span>
+
+                <span class="candle__base"></span>
+
+            </button>
+
+
+            <p class="wish-page__hint">
+                Click the candle to make your wish
+            </p>
+
+
+            <!-- Success Message -->
+            <div class="wish-success">
+
+                <span class="wish-success__icon">
+                    ✓
+                </span>
+
+                <h2 class="wish-success__title">
+                    Wish saved successfully.
+                </h2>
+
+                <p class="wish-success__text">
+                    Some wishes deserve a little magic.
+                </p>
+
+            </div>
+
+
+            <!-- Wish Cards -->
+            <div class="wish-cards">
+
+                <article class="wish-card">
+
+                    <span class="wish-card__icon">
+                        ✨
+                    </span>
+
+                    <h3 class="wish-card__title">
+                        Happiness
+                    </h3>
+
+                </article>
+
+
+                <article class="wish-card">
+
+                    <span class="wish-card__icon">
+                        🌙
+                    </span>
+
+                    <h3 class="wish-card__title">
+                        Peace
+                    </h3>
+
+                </article>
+
+
+                <article class="wish-card">
+
+                    <span class="wish-card__icon">
+                        🚀
+                    </span>
+
+                    <h3 class="wish-card__title">
+                        Success
+                    </h3>
+
+                </article>
+
+
+                <article class="wish-card">
+
+                    <span class="wish-card__icon">
+                        💫
+                    </span>
+
+                    <h3 class="wish-card__title">
+                        Beautiful Moments
+                    </h3>
+
+                </article>
+
+            </div>
+
+
+            <!-- Continue -->
+            <button
+                class="wish-page__button"
+                type="button"
+            >
+                Continue →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const wishPage =
+            document.querySelector(".wish-page");
+
+        const candle =
+            document.querySelector(".candle");
+
+        const success =
+            document.querySelector(".wish-success");
+
+        const hint =
+            document.querySelector(".wish-page__hint");
+
+        const cards =
+            document.querySelector(".wish-cards");
+
+        const continueButton =
+            document.querySelector(".wish-page__button");
+
+        const transition =
+            document.querySelector(".wish-transition");
+
+
+        /* PAGE ENTRANCE */
+
+        window.addEventListener("load", () => {
+
+            wishPage.classList.add("page-loaded");
+
+        });
+
+
+        /* MAKE WISH */
+
+        candle.addEventListener("click", () => {
+
+            if (
+                wishPage.classList.contains("wish-made")
+            ) {
+                return;
+            }
+
+            wishPage.classList.add("wish-made");
+
+            hint.textContent =
+                "Your wish is on its way ✨";
+
+            success.classList.add("show");
+
+            cards.classList.add("show");
+
+            continueButton.classList.add("show");
+
+        });
+
+
+        /* PAGE EXIT */
+
+        continueButton.addEventListener("click", () => {
+
+            wishPage.classList.add("page-exit");
+
+            transition.classList.add("active");
+
+            setTimeout(() => {
+
+                window.location.href =
+                    "memories.html";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+    <script src="../js/music.js"></script>
+
+
+</body>
+</html>
+

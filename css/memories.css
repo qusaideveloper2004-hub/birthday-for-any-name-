@@ -1,0 +1,757 @@
+/* =========================================
+   MEMORIES PAGE
+========================================= */
+
+.memories-page {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 80px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(236, 72, 153, 0.10),
+            transparent 30%
+        ),
+        #050510;
+
+    color: white;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+
+}
+
+
+/* =========================================
+   PAGE ENTRANCE
+========================================= */
+
+.memories-page.page-loaded {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.memories-page__header {
+
+    text-align: center;
+
+    max-width: 700px;
+
+}
+
+
+.memories-page__label {
+
+    margin: 0 0 15px;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.45);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+}
+
+
+.memories-page__title {
+
+    margin: 0;
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.03em;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #c4b5fd,
+            #f9a8d4
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+}
+
+
+.memories-page__subtitle {
+
+    margin: 20px 0 0;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.55);
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+}
+
+
+.memories-page.page-loaded
+.memories-page__label {
+
+    animation:
+        memoriesFadeUp 0.7s ease forwards;
+
+    animation-delay: 0.2s;
+
+}
+
+
+.memories-page.page-loaded
+.memories-page__title {
+
+    animation:
+        memoriesTitle 0.9s
+        cubic-bezier(0.16,1,0.3,1)
+        forwards;
+
+    animation-delay: 0.45s;
+
+}
+
+
+.memories-page.page-loaded
+.memories-page__subtitle {
+
+    animation:
+        memoriesFadeUp 0.7s ease forwards;
+
+    animation-delay: 0.85s;
+
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.memories-gallery {
+
+    width: min(1000px, 100%);
+
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 55px 45px;
+
+    perspective: 1200px;
+
+}
+
+
+/* =========================================
+   MEMORY CARD
+========================================= */
+
+.memory-card {
+
+    position: relative;
+
+    padding: 15px 15px 25px;
+
+    background: #ffffff;
+
+    color: #171717;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.35);
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        rotate(0deg);
+
+    transition:
+        transform 0.45s
+        cubic-bezier(0.16,1,0.3,1),
+        box-shadow 0.45s ease;
+
+}
+
+
+/* =========================================
+   CARD ROTATIONS
+========================================= */
+
+.memory-card--one {
+
+    transform:
+        translateY(45px)
+        rotate(-3deg);
+
+}
+
+
+.memory-card--two {
+
+    transform:
+        translateY(45px)
+        rotate(2deg);
+
+}
+
+
+.memory-card--three {
+
+    transform:
+        translateY(45px)
+        rotate(-2deg);
+
+}
+
+
+.memory-card--four {
+
+    transform:
+        translateY(45px)
+        rotate(3deg);
+
+}
+
+
+/* =========================================
+   CARD ENTRANCE
+========================================= */
+
+.memories-page.page-loaded
+.memory-card {
+
+    animation:
+        memoryCardEntrance
+        0.9s
+        cubic-bezier(0.16,1,0.3,1)
+        forwards;
+
+}
+
+
+.memories-page.page-loaded
+.memory-card--one {
+
+    animation-delay: 1.15s;
+
+}
+
+
+.memories-page.page-loaded
+.memory-card--two {
+
+    animation-delay: 1.35s;
+
+}
+
+
+.memories-page.page-loaded
+.memory-card--three {
+
+    animation-delay: 1.55s;
+
+}
+
+
+.memories-page.page-loaded
+.memory-card--four {
+
+    animation-delay: 1.75s;
+
+}
+
+
+@keyframes memoryCardEntrance {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(var(--rotation));
+
+    }
+
+}
+
+
+/* Preserve rotations after entrance */
+
+.memory-card--one {
+
+    --rotation: -3deg;
+
+}
+
+
+.memory-card--two {
+
+    --rotation: 2deg;
+
+}
+
+
+.memory-card--three {
+
+    --rotation: -2deg;
+
+}
+
+
+.memory-card--four {
+
+    --rotation: 3deg;
+
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.memory-card:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(0deg)
+        scale(1.02);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.45);
+
+    z-index: 5;
+
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.memory-card__image {
+
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+}
+
+
+.memory-card__image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s
+        cubic-bezier(0.16,1,0.3,1);
+
+}
+
+
+.memory-card:hover
+.memory-card__image img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.memory-card__content {
+
+    padding-top: 18px;
+
+    text-align: center;
+
+}
+
+
+.memory-card__title {
+
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    color: #222222;
+
+}
+
+
+.memory-card__date {
+
+    margin: 7px 0 0;
+
+    font-size: 0.72rem;
+
+    color: #777777;
+
+    letter-spacing: 0.04em;
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.memories-page__button {
+
+    margin-top: 65px;
+
+    padding: 14px 28px;
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.memories-page.page-loaded
+.memories-page__button {
+
+    animation:
+        memoriesFadeUp 0.8s ease forwards;
+
+    animation-delay: 2.25s;
+
+}
+
+
+.memories-page__button:hover {
+
+    background:
+        rgba(139,92,246,0.15);
+
+    border-color:
+        rgba(167,139,250,0.45);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(139,92,246,0.18);
+
+}
+
+
+/* =========================================
+   PAGE EXIT
+========================================= */
+
+.memories-page.page-exit {
+
+    animation:
+        memoriesExit 0.9s ease forwards;
+
+}
+
+
+@keyframes memoriesExit {
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            scale(0.96)
+            translateY(-20px);
+
+        filter: blur(5px);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE 6 → PAGE 7
+   PURPLE / PINK REVEAL
+========================================= */
+
+.memories-transition {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--pink),
+            var(--purple) 35%,
+            #050510 75%
+        );
+
+    transform: scale(0);
+
+    border-radius: 50%;
+
+    transition:
+        transform 1s
+        cubic-bezier(0.16,1,0.3,1),
+
+        opacity 0.5s ease;
+
+}
+
+
+.memories-transition.active {
+
+    opacity: 1;
+
+    transform: scale(3);
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes memoriesFadeUp {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes memoriesTitle {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .memories-page {
+
+        padding:
+            65px 20px;
+
+    }
+
+
+    .memories-gallery {
+
+        gap: 35px 25px;
+
+    }
+
+
+    .memory-card__image {
+
+        height: 240px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .memories-page {
+
+        padding:
+            55px 18px;
+
+    }
+
+
+    .memories-gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-top: 45px;
+
+    }
+
+
+    .memory-card__image {
+
+        height: 300px;
+
+    }
+
+
+    .memories-page__button {
+
+        margin-top: 45px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .memory-card__image {
+
+        height: 250px;
+
+    }
+
+
+    .memory-card {
+
+        padding:
+            12px 12px 22px;
+
+    }
+
+
+    .memory-card__title {
+
+        font-size: 1rem;
+
+    }
+
+}
+
+
+
+
+.memory-card--one .memory-card__image img {
+    object-fit: contain;
+    background: #11111c;
+}
