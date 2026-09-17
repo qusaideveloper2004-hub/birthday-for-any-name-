@@ -5,7 +5,7 @@
 ## Live Demo
 
 **Live Website:**
-`[https://birthday-for-gehad.vercel.app/]`
+[https://birthday-for-gehad.vercel.app/]
 
 ---
 
